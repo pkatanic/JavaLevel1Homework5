@@ -4,7 +4,7 @@ package ru.geekbrains.homework;
 
     public Cat(String name, String breed, int maxRun, int maxSwim, double maxJump) {
         super(name, breed, maxRun, maxSwim, maxJump);
-        this.maxJump=2.0;
+        this.maxJump=(Math.random()*0.9+2);
         this.maxRun= random.nextInt(45) + 155;
         this.maxSwim=0;
         this.breed="Кот";
@@ -35,6 +35,7 @@ package ru.geekbrains.homework;
 
      @Override
      void info() {
-         System.out.println(breed + " " + name + " может пробежать не более " + maxRun + breed +" не умеют плавать " +maxSwim + "  прыгнуть  " + maxJump );
+         String maxJumpFormat = String.format("%.2f",maxJump);
+         System.out.println(breed + " " + name + " может пробежать не более " + maxRun + " метров. "+ breed + "  не умеeт плавать. " +maxSwim + " Может прыгнуть  " + maxJumpFormat + " сантиметров" );
      }
  }

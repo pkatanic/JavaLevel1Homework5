@@ -3,7 +3,7 @@ package ru.geekbrains.homework;
 public class Dog extends Animal {
     public Dog(String name, String breed, int maxRun, int maxSwim, double maxJump) {
         super(name, breed, maxRun, maxSwim, maxJump);
-        this.maxJump=Math.random()*0.8+0.9;  // в книге Гинесса записан рекод прыжка вверх собаки от 172 сантиметров. До этого 167.7.
+        this.maxJump=(Math.random()*0.8+0.9);  // в книге Гинесса записан рекод прыжка вверх собаки от 172 сантиметров. До этого 167.7.
         this.maxRun=random.nextInt(300)+300;
         this.maxSwim = random.nextInt(6)+5;
         this.breed="Собака";
@@ -36,6 +36,7 @@ public class Dog extends Animal {
 
     @Override
     void info() {
-        System.out.println(breed + " " + name + " может пробежать не более " + maxRun + " проплыть не более " +maxSwim + "  прыгнуть  " + maxJump );
+        String maxJumpFormat = String.format("%.2f",maxJump);
+        System.out.println(breed + " " + name + " может пробежать не более " + maxRun + " метров." + name + " может проплыть не более " + maxSwim + " метров." +"  прыгнуть " + maxJumpFormat + " сантиметров" );
     }
 }
